@@ -32,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--main-color);
   border: var(--border);
   block-size: clamp(327px, calc(312.563px + 3.85vw), 368px);
 }
@@ -64,7 +64,7 @@
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--main-color);
   border: var(--border);
 }
 
@@ -113,7 +113,7 @@
   position: absolute;
   inset-inline-end: 25px;
   inset-block-start: 25px;
-  color: rgba(0, 0, 0);
+  color: var(--accent-color);
   font-family: var(--accent-font);
   text-shadow: var(--text-stroke);
   mix-blend-mode: hard-light;
@@ -131,7 +131,18 @@
 
 .card__icon-button {
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
+  transition: border .3s ease;
+  max-block-size: 38px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+  transition: border .3s ease;
 }
 
 .card__buttons {
@@ -144,15 +155,58 @@
 }
 
 .card__like-button {
-  background-color: transparent;
-  border: var(--border);
   padding: 7px 35px;
 }
 
 .save__button {
+  margin-block-end: var(--offset-l);
+}
+
+.button {
   background-color: #fff;
   border: var(--border);
-  margin-block-end: var(--offset-l);
+  user-select: none;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .3s ease;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--accent-color);
+  transition: box-shadow .3s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  translate: -100% 0%;
+  transition: translate .5s ease-in-out;
+}
+
+.button:hover::before {
+  translate: 0% 0%;
+  transition: translate .5s ease-in-out;
+}
+
+.button__text {
+  position: relative;
+  color: var(--main-color);
+  font-family: var(--accent-font);
+  font-size: var(--accent-font-size);
+  mix-blend-mode: difference;
 }
 
 .save__button-content {
@@ -163,9 +217,9 @@
   padding: 15px 17px;
 }
 
-.button__text {
-  font-family: var(--accent-font);
-  font-size: var(--accent-font-size);
+.floppy {
+  position: relative;
+  mix-blend-mode: difference;
 }
 
 .insert-floppy {
@@ -174,7 +228,8 @@
 }
 
 .insert-floppy::backdrop {
-  background-color: rgba(0, 0, 0, .75);
+  background-color: var(--accent-color);
+  opacity: 75%;
 }
 
 .insert-floppy__content {
@@ -195,10 +250,6 @@
   line-height: 150%;
 }
 
-.insert-floppy__content-text svg {
-  min-inline-size: 39px;
-}
-
 .insert-floppy__close-button {
   background-color: transparent;
   border: var(--border);
@@ -206,10 +257,10 @@
   padding-inline: clamp(114px, calc(108.366px + 1.502vw), 130px);
 }
 
-@supports ((text-stroke: 1px #fff) or (--webkit-text-stroke: 1px #fff)) {
+@supports ((text-stroke: 1px var(--main-color)) or (--webkit-text-stroke: 1px var(--main-color))) {
   .card__image-label {
-    -webkit-text-stroke: 1px #fff;
-    text-stroke: 1px #fff;
+    -webkit-text-stroke: 1px var(--main-color);
+    text-stroke: 1px var(--main-color);
     text-shadow: none;
   }
 }
@@ -217,10 +268,5 @@
 @media (width <= 375px) {
   .save__button-content {
     flex-direction: column;
-  }
-
-  .save__button-content svg {
-    min-inline-size: 29px;
-    min-block-size: 29px;
   }
 }
