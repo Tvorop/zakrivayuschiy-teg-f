@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: var(--regular-wght);
+  font-variation-settings: 'wght' var(--regular-wght);
   margin-block-start: var(--offset-xl);
   gap: var(--offset-xl);
   background-image: var(--main-gradient);
@@ -126,7 +126,7 @@
   gap: var(--offset-sm);
   margin: var(--offset-sm);
   font-size: var(--main-font-size);
-  font-weight: var(--regular-wght);
+  font-variation-settings: 'wght' var(--regular-wght);
 }
 
 .card__icon-button {
