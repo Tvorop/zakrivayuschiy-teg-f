@@ -246,6 +246,11 @@
   gap: var(--offset-s);
 }
 
+.insert-floppy__content-text .floppy {
+  min-inline-size: 39px;
+  min-block-size: 39px;
+}
+
 .insert-floppy__content-text .button__text {
   line-height: 150%;
 }
@@ -268,5 +273,10 @@
 @media (width <= 375px) {
   .save__button-content {
     flex-direction: column;
+  }
+
+  .save__button-content .floppy {
+    min-inline-size: 29px;
+    min-block-size: 29px;
   }
 }
