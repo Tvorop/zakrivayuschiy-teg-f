@@ -89,8 +89,8 @@
   filter: grayscale(60%);
 }
 
-.sepia {
-  filter: sepia(.7);
+.sepia-grayscale {
+  filter: sepia(.7) grayscale(30%);
 }
 
 .saturate {
@@ -163,15 +163,12 @@
 }
 
 .button {
-  background-color: #fff;
-  border: var(--border);
-  user-select: none;
-}
-
-.button {
   position: relative;
   overflow: hidden;
   transition: box-shadow .3s ease;
+  background-color: #fff;
+  border: var(--border);
+  user-select: none;
 }
 
 .button:hover {
