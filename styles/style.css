@@ -42,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), monospace;
   text-transform: uppercase;
   gap: var(--offset-s);
 }
@@ -142,7 +142,6 @@
 
 .card__icon-button:focus-visible {
   border-color: var(--accent-color);
-  transition: border .3s ease;
 }
 
 .card__buttons {
@@ -155,7 +154,9 @@
 }
 
 .card__like-button {
-  padding: 7px 35px;
+  text-align: center;
+  min-inline-size: 130px;
+  padding-block: 7px;
 }
 
 .save__button {
@@ -181,7 +182,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px var(--accent-color);
-  transition: box-shadow .3s ease;
 }
 
 .button::before {
@@ -195,7 +195,6 @@
 
 .button:hover::before {
   translate: 0% 0%;
-  transition: translate .5s ease-in-out;
 }
 
 .button__text {
@@ -222,6 +221,10 @@
 .insert-floppy {
   inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
   padding: 28px;
+}
+
+.insert-floppy .button__text {
+  text-transform: uppercase;
 }
 
 .insert-floppy::backdrop {

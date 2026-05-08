@@ -71,7 +71,7 @@
 
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
-  transition: fill .3s linear;
+  transition: fill .3s linear 60ms;
 }
 
 .like-icon.is-liked .main-body {
@@ -81,7 +81,7 @@
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
-  transition: fill .3s linear 60ms;
+  transition: fill .3s linear;
 }
 
 .like-icon.is-liked .heart {
