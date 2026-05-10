@@ -114,7 +114,7 @@
   inset-inline-end: 25px;
   inset-block-start: 25px;
   color: var(--accent-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), monospace;
   text-shadow: var(--text-stroke);
   mix-blend-mode: hard-light;
   opacity: 50%;
@@ -200,7 +200,7 @@
 .button__text {
   position: relative;
   color: var(--main-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), monospace;
   font-size: var(--accent-font-size);
   mix-blend-mode: difference;
 }
